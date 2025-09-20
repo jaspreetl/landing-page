@@ -208,6 +208,11 @@ input, select, textarea {
 		font-size: 1.5rem;
 		line-height: 1.4;
 		letter-spacing: 0.5rem;
+		
+	}
+	h2.major {
+	white-space: normal; /* allow line breaks */
+	word-wrap: break-word; /* break long words if needed */
 	}
 
 	h3 {
