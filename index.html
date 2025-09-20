@@ -42,7 +42,7 @@
 							<div class="inner">
 								<h1>Jaspreet Lal</h1>
 								<p>Dual Masters Student, Cornell Tech<br />
-								Software Engineering Fellow, Headstarter AI<br />
+								Data Engineering Associate, Metropolitan Transit Authority (MTA)<br />
 								Incoming Open Data Intern, MTA</p>
 
 								<!-- <p>A fully responsive site template designed by <a href="https://html5up.net">HTML5 UP</a> and released<br />
@@ -65,23 +65,64 @@
 
 						<!-- project1 -->
 							<article id="project1">
-								<h2 class="major">Air Alert</h2>
-								<p>Product Management Case Study</p>
+								<h2 class="major">Roses, romance, and rush hour: A data-driven look at NYC on Valentine's Day</h2>
+								<p>MTA Data & Analytics Blog</p>
+								<p>While working on MTA's Open Data team, I co-authored an article exploring Valentine's Day travel 
+									patterns in New York City using MTA Open Data. I worked with datasets from the Socrata API—including 
+									MTA Bridges & Tunnels HourlyCrossings and MTA Subway Hourly Ridership—and used DuckDB for querying and 
+									Python (Pandas, Seaborn, Matplotlib) for data wrangling and visualization. Through time-series analysis
+									and heatmap comparisons, I examined anomalies, shifts in commuter behavior, and borough-level 
+									differences. This project showcases both a technical workflow for handling large public datasets 
+									and an applied case study in urban mobility.</p>
 								<!-- <span class="image main"><img src="images/pic01.jpg" alt="" /></span>
 								<p> Coming soon ... </p> -->
-
-								<center><iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTjY5oQ3dwGEiHmLQYUBz4sWPILW-vFMrI8YqBVeC7ejeVtC-n39kkmCPyLwUr46bgDguon7cCIMQfF/embed?start=false&loop=false&delayms=3000" frameborder="0" width="480" height="299" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></center>
+								<a href="https://www.mta.info/article/roses-romance-and-rush-hour-data-driven-look-nyc-valentines-day">Read the full article here!</a>
 							</article>
 
 						<!-- project2 -->
 							<article id="project2">
-								<h2 class="major">Project 2</h2>
+								<h2 class="major">SafeScan</h2>
 								<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
-								<p> Coming soon ... </p>
+								<p>As part of a graduate project, my team and I developed SafeScan, a machine learning-powered 
+									application that helps consumers evaluate the safety of cosmetic and personal care products. 
+									The app uses OCR to extract ingredient lists from uploaded images and applies custom-built 
+									models—including linear regression, decision trees, and random forests—to generate a safety 
+									score from 0 to 10 based on the presence of potentially harmful chemicals (e.g., parabens, 
+									phthalates, sulfates). </p>
+								<br>
+								<p>We trained and evaluated our models on a Kaggle dataset of 1,472 products, using metrics such as 
+									MSE, MAE, and R² to assess performance. The Random Forest model emerged as the most accurate, 
+									explaining ~87% of the variance in harm scores.</p>
+								<br>
+								<p>The final solution was deployed as a Streamlit app, allowing users to upload product images, view 
+									extracted ingredients, and receive a transparent safety breakdown. This project bridges technical 
+									innovation with public health, offering a scalable, user-friendly tool to promote informed 
+									purchasing decisions and encourage safer product formulations. </p>
+									
 								<!-- <p>Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.</p>
 								<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat tempus.</p> -->
+							<a href="https://github.com/vmc54/PAML-Final-Project">View this project on GitHub here!</a>
 							</article>
 
+						<!-- project3 -->
+							<article id="project3">
+								<h2 class="major">Dorian</h2>
+								<span class="image main"><img src="images/dorian.jpg" alt="" /></span>
+								<p>Dorian is a full-stack e-commerce application for specialty coffee. The platform is developed 
+									from scratch using the MERN stack (MongoDB, Express, React, Node.js). The customer-facing site 
+									allows users to browse products, apply filters, select variants (e.g., size or grind), and manage 
+									their cart through to checkout. On the operations side, I created an admin dashboard for inventory 
+									and product management. All data — including user profiles, product catalogs, and transactions — 
+									is stored in MongoDB, with Express/Node.js powering backend services. The frontend and admin portal 
+									are deployed on Vercel, and future iterations will integrate Stripe for secure payments.</p>
+									
+								<!-- <p>Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.</p>
+								<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat tempus.</p> -->
+								<a href="https://dorian2-frontend.vercel.app/">See frontend portal here.</a>
+								<a href="https://dorian2-admin.vercel.app/">See admin portal here.</a>
+								<a href="https://github.com/jaspreetl/dorian2">View this project on GitHub here!</a>
+
+							</article>
 						<!-- About -->
 							<article id="about">
 								<h2 class="major">About</h2>
@@ -89,29 +130,23 @@
 								<h5>Student, Tech Enthusiast, and Aspiring Data Scientist</h5>
 								<div class="content">
 									<div class="inner">
-										<p>I am a graduate student, studuing in Cornell Tech's class of 2026. I am pursuing 
-											a dual degree in applied information science and information systems with a 
-											concentration in urban technology. I've been programming since my fresh-woman 
-											year of high school. Throughout the years, I've gained significant expirience in 
-											C++, Swift, Python, HTML, CSS, Javasvript, and React. With a strong foundation in 
-											software engineering and data analytics, I thrive on solving complex problems 
-											and leveraging technology to create innovative solutions.<br /> 
+										<p>I am a graduate student in Cornell Tech's Class of 2026, pursuing a dual degree in Applied Information 
+											Science and Information Systems with a concentration in Urban Technology. With over eight years of 
+											experience in computer science and technology, I have developed strong expertise in Python, SQL, C++, 
+											Swift, React.js, and related tools. My background in software engineering and data engineering has 
+											equipped me to solve complex problems and build innovative, technology-driven solutions.<br /> 
 											<br />
-											I have four years of experience in the education field, where I had responsibilities
-											that ranged from teaching kindergardeners in the Upper East Side how to code in Scratch 
-											Jr. and eleventh graders about the nuts and bolts of the college process. <br />
+											In addition, I bring four years of part-time experience in education, where I taught subjects 
+											ranging from introductory coding with Scratch to guiding high school students through the 
+											college application process. This experience has strengthened my ability to communicate complex 
+											concepts clearly and mentor learners of all levels. <br />
 											<br />
-											When I'm not immersed in the world of computer science and technology, I enjoy 
-											exploring other interests. I am an avid reader, constantly seeking to expand my 
-											knowledge across various subjects. I also love to travel, as it allows me to 
-											experience different cultures and gain new perspectives. I've traveling to eight 
-											countries just this year incliding Spain, France, Belgium, The Netherlands, and more!<br />
+											Outside of my academic and professional pursuits, I am an avid reader with a curiosity that 
+											spans many disciplines. I also enjoy traveling and baking as creative outlets. <br />
 											<br />
 											Thank you for taking the time to learn more about me. I am always open to new 
 											opportunities and collaborations. Feel free to reach out to me via the <a href="#contact">Contact</a> 
 											page or on <a href="https://www.linkedin.com/in/jaspreet-lal-232a171b2/">LinkedIn</a>. 
-											Let's connect and create something amazing together!
-
 										</p>
 										<hr>
 										<H4>Unmentioned Skills: </H4>
@@ -127,7 +162,23 @@
 							</article>
 
 						<!-- Contact -->
-							<article id="contact">
+						 <!-- modify this form HTML and place wherever you want your form -->
+							<form
+							action="https://formspree.io/f/mvgbeyej"
+							method="POST"
+							>
+							<label>
+								Your email:
+								<input type="email" name="email">
+							</label>
+							<label>
+								Your message:
+								<textarea name="message"></textarea>
+							</label>
+							<!-- your other form fields go here -->
+							<button type="submit">Send</button>
+							</form>
+							<!-- <article id="contact">
 								<h2 class="major">Contact</h2>
 								
 								<form action="mailto:jaspreetlal037@gmail.com" method="post" >
@@ -148,7 +199,7 @@
 									
 									<ul class="actions">
 										<li><button type="submit" id="fcf-button" class="fcf-btn fcf-btn-primary fcf-btn-lg fcf-btn-block">Send Message</button></li>
-										<!-- <li><input type="submit" value="Send Message" class="primary" /></li> -->
+										<li><input type="submit" value="Send Message" class="primary" /></li>
 										<li><input type="reset" value="Reset" /></li>
 									</ul>
 								</form>
@@ -158,7 +209,7 @@
 									<li><a href="https://www.linkedin.com/in/jaspreet-lal-232a171b2/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
 									<li><a href="https://github.com/jaspreetl" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
 								</ul>
-							</article>
+							</article> -->
 
 						<!-- Elements -->
 							<article id="elements">
