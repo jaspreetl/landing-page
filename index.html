@@ -1,455 +1,458 @@
-<!DOCTYPE HTML>
-<!--
-	Dimension by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-EPXW5TB58D"></script>
-		<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jaspreet Lal | Personal Site</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --sand: #f8f5eb;
+      --terra: #c07a6a;
+      --terra-deep: #a25f52;
+      --ink: #5c4238;
+      --muted: #7a655a;
+      --line: #d3b9aa;
+      --hero-overlay: rgba(6, 12, 18, 0.55);
+      --text-main: #f8f7f4;
+      --text-sub: #e4e3df;
+      --accent: #f2c48d;
+    }
+    * { box-sizing: border-box; }
+    html {
+      background: var(--sand);
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--text-main);
+      background: var(--sand);
+      min-height: 100vh;
+    }
+    #root {
+      background: var(--sand);
+      min-height: 100vh;
+    }
+    main,
+    .section-shell,
+    .cv-block,
+    .about-block,
+    .contact,
+    footer {
+      background: var(--sand);
+    }
+    a { color: inherit; text-decoration: none; }
+    .hero {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 0 8vw;
+      isolation: isolate;
+    }
+    .hero video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(115deg, rgba(6, 12, 18, 0.7) 20%, rgba(6, 12, 18, 0.35) 55%, rgba(6, 12, 18, 0.15) 100%);
+      z-index: -1;
+    }
+    .hero__content {
+      max-width: 620px;
+      text-align: right;
+    }
+    .hero__title {
+      font-family: 'Playfair Display', 'Times New Roman', serif;
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      letter-spacing: 0.08em;
+      margin: 0 0 1.5rem;
+      line-height: 1.08;
+      text-transform: uppercase;
+    }
+    .hero__subtitle {
+      font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+      font-weight: 500;
+      color: var(--text-sub);
+      line-height: 1.6;
+      margin: 0 0 1.25rem;
+    }
+    .hero__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.7rem 1.1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(248, 247, 244, 0.35);
+      background: rgba(8, 17, 23, 0.45);
+      backdrop-filter: blur(6px);
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+    }
+    .hero__cta svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--accent);
+      fill: none;
+    }
+    .hero__cta:hover {
+      transform: translateY(-2px);
+      border-color: rgba(242, 196, 141, 0.8);
+      background: rgba(8, 17, 23, 0.7);
+    }
+    .hero__cta:active { transform: translateY(0); }
+    main {
+      padding: 6rem 4vw 0;
+      background: var(--sand);
+      color: var(--ink);
+    }
+    .section-shell {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2.4rem;
+      width: 100%;
+      background: transparent;
+    }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-weight: 600;
+      font-size: 0.75rem;
+      color: var(--terra);
+      text-align: center;
+      margin-bottom: 1.25rem;
+    }
+    .cv-block {
+      padding: 0 0 4rem;
+    }
+    .cv-mark {
+      font-family: 'Playfair Display', 'Times New Roman', serif;
+      font-size: clamp(3rem, 6vw, 5rem);
+      color: var(--terra);
+      margin: 0 0 2.5rem;
+      text-align: left;
+    }
+    .cv-panels {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+    }
+    .cv-column {
+      padding-right: 1.5rem;
+    }
+    .cv-heading {
+      font-family: 'Playfair Display', 'Times New Roman', serif;
+      font-size: clamp(2rem, 4vw, 2.6rem);
+      color: var(--terra);
+      margin: 0 0 0.5rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .cv-divider {
+      border: none;
+      border-top: 2px solid var(--terra);
+      margin: 0 0 1.5rem;
+    }
+    .cv-item {
+      margin-bottom: 1.4rem;
+    }
+    .cv-role {
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .cv-org {
+      margin-top: 0.25rem;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.98rem;
+    }
+    .cv-org::before {
+      content: '›';
+      color: var(--terra);
+      font-weight: 800;
+    }
+    .projects-block {
+      background: var(--terra);
+      color: #fffaf3;
+      padding: 4rem 0 4rem;
+      margin: 0;
+    }
+    .projects-heading {
+      font-family: 'Playfair Display', 'Times New Roman', serif;
+      font-size: clamp(2.5rem, 5vw, 3rem);
+      margin: 0 0 2.5rem;
+      letter-spacing: 0.05em;
+    }
+    .projects-list {
+      display: grid;
+      gap: 3rem;
+      max-width: 980px;
+    }
+    .project-item h4 {
+      margin: 0 0 0.35rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+    .project-meta {
+      margin: 0 0 0.9rem;
+      color: #f5e2d8;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+    .project-meta a {
+      color: #fffaf3;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .project-copy {
+      margin: 0;
+      line-height: 1.8;
+      color: #f6e8df;
+    }
+    .contact {
+      max-width: 1280px;
+      margin: 4rem auto 2rem;
+      padding: 2.2rem;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+      color: var(--ink);
+    }
+    .contact a { color: var(--terra); font-weight: 700; }
+    footer {
+      padding: 3rem 8vw 3.5rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+      background: var(--sand);
+      border-top: none;
+      text-align: center;
+      margin-top: 0;
+    }
+    .about-block {
+      background: var(--sand);
+      color: var(--ink);
+      max-width: 1280px;
+      margin: 4rem auto;
+      padding: 0 1.8rem 2rem;
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(320px, 1.6fr) minmax(260px, 1fr);
+      gap: 2.75rem;
+      align-items: start;
+    }
+    .about-heading {
+      font-family: 'Playfair Display', 'Times New Roman', serif;
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      margin: 0 0 1.5rem;
+      letter-spacing: 0.04em;
+      color: var(--terra);
+    }
+    .about-copy {
+      margin: 0 0 1.4rem;
+      line-height: 1.8;
+      font-size: 1.05rem;
+      color: var(--muted);
+    }
+    .about-list {
+      margin: 0;
+      padding-left: 1.1rem;
+      line-height: 1.7;
+      color: var(--muted);
+      font-weight: 400;
+    }
+    .about-photo {
+      width: 100%;
+      max-width: 340px;
+      border-radius: 18px;
+      object-fit: cover;
+      justify-self: center;
+      align-self: center;
+      display: block;
+      margin: 0 auto;
+      box-shadow: 0 14px 32px rgba(0,0,0,0.22);
+    }
+    @media (max-width: 720px) {
+      .hero { justify-content: center; padding: 0 6vw; }
+      .hero__content { text-align: center; }
+      .hero__title { letter-spacing: 0.04em; }
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
 
-		gtag('config', 'G-EPXW5TB58D');
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
+  <script type="text/babel">
+    const cvWork = [
+      { role: 'Data Science Intern (2024 – present)', org: 'Metropolitan Transportation Authority (MTA)' },
+      { role: 'Administrative Dean (2021–2024)', org: 'Sadie Nash Leadership Project' },
+      { role: 'Software Engineering Intern (Summer 2021)', org: 'Apartment Therapy' },
+    ];
 
-		</script>
-		<script>
-			window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-  		</script>
-  		<script defer src="/_vercel/insights/script.js"></script>
-		<title>Jaspreet's Portfolio</title>
-		<link rel="icon" type="image/x-icon" href="/images/portfolio_logo.ico">
+    const cvEducation = [
+      { role: 'Dual MS in Applied Information Science & Systems', org: 'Cornell Tech, 2026' },
+      { role: 'BS in Computer Science', org: 'Fordham University, 2024' },
+    ];
 
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
-		<!-- Wrapper -->
-			<div id="wrapper">
+    const projects = [
+      {
+        title: 'MTA Blog Post',
+        meta: '“Roses, romance, and rush hour: A data-driven look at NYC on Valentine’s Day” | Spring 2025',
+        href: 'https://www.mta.info/article/roses-romance-and-rush-hour-data-driven-look-nyc-valentines-day',
+        summary: `While working on MTA's Open Data team, I co-authored an article exploring Valentine's Day travel patterns in New York City using MTA Open Data. I worked with datasets from the Socrata API, including MTA Bridges & Tunnels HourlyCrossings and MTA Subway Hourly Ridership, and used DuckDB for querying and Python (Pandas, Seaborn, Matplotlib) for data wrangling and visualization. Through time-series analysis and heatmap comparisons, I examined anomalies, shifts in commuter behavior, and borough-level differences. This project showcases both a technical workflow for handling large public datasets and an applied case study in urban mobility.`,
+      },
+      {
+        title: 'SafeScan — ML App for Cosmetic & Personal Care Safety',
+        meta: 'https://github.com/vmc54/PAML-Final-Project | Spring 2025',
+        href: 'https://github.com/vmc54/PAML-Final-Project',
+        summary: `I contributed to SafeScan, a project that uses OCR to extract ingredient lists from product images and applies custom-built models (including linear regression, decision trees, and random forests) to generate a 0–10 safety score based on the presence of potentially harmful chemicals like parabens, phthalates, and sulfates. We trained and evaluated the models on a Kaggle dataset of 1,472 products using MSE, MAE, and R², with the Random Forest performing best and explaining ~87% of the variance in harm scores. The final system was deployed as a Streamlit app that lets users upload images, view extracted ingredients, and receive a transparent safety breakdown, bridging machine learning and public health to support informed purchasing and safer product formulations.`,
+      },
+    ];
 
-				<!-- Header -->
-					<header id="header">
-						<div class="logo">
-							<span class="icon fa-gem"></span>
-						</div>
-						<div class="content">
-							<div class="inner">
-								<h1>Jaspreet Lal</h1>
-								<p>Dual Masters Student, Cornell Tech<br />
-								Data Engineering Associate, Metropolitan Transit Authority (MTA)
+    const smoothScroll = (event, targetId) => {
+      event.preventDefault();
+      const target = document.querySelector(targetId);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    };
 
-								<!-- <p>A fully responsive site template designed by <a href="https://html5up.net">HTML5 UP</a> and released<br />
-								for free under the <a href="https://html5up.net/license">Creative Commons</a> license.</p> -->
-							</div>
-						</div>
-						<nav>
-							<ul>
-								<li><a href="#project1">Project 1</a></li>
-								<li><a href="#project2">Project 2</a></li>
-								<li><a href="#project3">Project 3</a></li>
-								<li><a href="#about">About</a></li>
-								<li><a href="#contact">Contact</a></li>
-								<!--<li><a href="#elements">Elements</a></li>-->
-							</ul>
-						</nav>
-					</header>
+    const Hero = () => (
+      <header className="hero" id="top">
+        <video autoPlay muted loop playsInline poster="images/portfolio_logo.jpg">
+          <source src="images/pigeon.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div className="hero__content">
+          <h1 className="hero__title">Jaspreet<br />Lal</h1>
+          <p className="hero__subtitle">
+            Masters Candidate, Applied Information Science &amp; Systems at Cornell Tech
+          </p>
+          <p className="hero__subtitle">
+            Data Engineering Associate, Metropolitan Transit Authority (MTA)
+          </p>
+          <a className="hero__cta" href="#work" onClick={(e) => smoothScroll(e, '#work')}>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 4v16M6 14l6 6 6-6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            See my work
+          </a>
+        </div>
+      </header>
+    );
 
-				<!-- Main -->
-					<div id="main">
+    const WorkSection = () => (
+      <main id="work">
+        <section className="cv-block">
+          <div className="section-shell">
+            <div className="eyebrow">Projects | CV</div>
+            <div className="cv-mark">CV</div>
+            <div className="cv-panels">
+              <div className="cv-column">
+                <h3 className="cv-heading">Work</h3>
+                <hr className="cv-divider" />
+                {cvWork.map((item) => (
+                  <div className="cv-item" key={item.role}>
+                    <div className="cv-role">{item.role}</div>
+                    <div className="cv-org">{item.org}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="cv-column">
+                <h3 className="cv-heading">Education</h3>
+                <hr className="cv-divider" />
+                {cvEducation.map((item) => (
+                  <div className="cv-item" key={item.role}>
+                    <div className="cv-role">{item.role}</div>
+                    <div className="cv-org">{item.org}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
 
-						<!-- project1 -->
-							<article id="project1">
-								<h2 class="major">MTA Blog Post </h2>
-								<span class="image main"><img src="images/mta-v.png" alt="" /></span>
-								<h4>Roses, romance, and rush hour: A data-driven look at NYC on Valentine's Day</h4>
-								<p>While working on MTA's Open Data team, I co-authored an article exploring Valentine's Day travel 
-									patterns in New York City using MTA Open Data. I worked with datasets from the Socrata API—including 
-									MTA Bridges & Tunnels HourlyCrossings and MTA Subway Hourly Ridership—and used DuckDB for querying and 
-									Python (Pandas, Seaborn, Matplotlib) for data wrangling and visualization. Through time-series analysis
-									and heatmap comparisons, I examined anomalies, shifts in commuter behavior, and borough-level 
-									differences. This project showcases both a technical workflow for handling large public datasets 
-									and an applied case study in urban mobility.</p>
-								<!-- <span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-								<p> Coming soon ... </p> -->
-								<a href="https://www.mta.info/article/roses-romance-and-rush-hour-data-driven-look-nyc-valentines-day">Read the full article here!</a>
-							</article>
+        <section className="projects-block">
+          <div className="section-shell">
+            <div className="eyebrow" style={{ color: '#f5e2d8' }}>Projects | CV</div>
+            <h2 className="projects-heading">Projects</h2>
+            <div className="projects-list">
+              {projects.map((project) => (
+                <article className="project-item" key={project.title}>
+                  <h4>{project.title}</h4>
+                  <p className="project-meta">
+                    {project.href ? (
+                      <a href={project.href} target="_blank" rel="noreferrer">{project.meta || project.href}</a>
+                    ) : project.meta}
+                  </p>
+                  <p className="project-copy">{project.summary}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
 
-						<!-- project2 -->
-							<article id="project2">
-								<h2 class="major">SafeScan</h2>
-								<p>As part of a graduate project, my team and I developed SafeScan, a machine learning-powered 
-									application that helps consumers evaluate the safety of cosmetic and personal care products. 
-									The app uses OCR to extract ingredient lists from uploaded images and applies custom-built 
-									models—including linear regression, decision trees, and random forests—to generate a safety 
-									score from 0 to 10 based on the presence of potentially harmful chemicals (e.g., parabens, 
-									phthalates, sulfates). </p>
-								<br>
-								<p>We trained and evaluated our models on a Kaggle dataset of 1,472 products, using metrics such as 
-									MSE, MAE, and R² to assess performance. The Random Forest model emerged as the most accurate, 
-									explaining ~87% of the variance in harm scores.</p>
-								<br>
-								<p>The final solution was deployed as a Streamlit app, allowing users to upload product images, view 
-									extracted ingredients, and receive a transparent safety breakdown. This project bridges technical 
-									innovation with public health, offering a scalable, user-friendly tool to promote informed 
-									purchasing decisions and encourage safer product formulations. </p>
-									
-								<!-- <p>Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.</p>
-								<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat tempus.</p> -->
-							<a href="https://github.com/vmc54/PAML-Final-Project">View this project on GitHub here!</a>
-							</article>
+        <section className="about-block" id="about">
+          <div className="eyebrow" style={{ color: '#f5e2d8' }}>About</div>
+          <div className="about-grid">
+            <div>
+              <h2 className="about-heading">About Me</h2>
+              <p className="about-copy">
+                With over eight years of experience in computer science and technology, I bring strong proficiency in Python, SQL, C++, and related tools. I have extensive hands-on experience building and orchestrating data pipelines using Apache Airflow, including designing DAGs, managing dependencies, handling incremental and backfill workflows, and integrating Spark-based and SQL-driven transformations. My background in software and data engineering has equipped me to build reliable, scalable pipelines and solve complex problems in production environments.
 
-						<!-- project3 -->
-							<article id="project3">
-								<h2 class="major">Dorian</h2>
-								<span class="image main"><img src="images/dorian.png" alt="" /></span>
-								<p>Dorian is a full-stack e-commerce application for specialty coffee. The platform is developed 
-									from scratch using the MERN stack (MongoDB, Express, React, Node.js). The customer-facing site 
-									allows users to browse products, apply filters, select variants (e.g., size or grind), and manage 
-									their cart through to checkout. On the operations side, I created an admin dashboard for inventory 
-									and product management. All data — including user profiles, product catalogs, and transactions — 
-									is stored in MongoDB, with Express/Node.js powering backend services. The frontend and admin portal 
-									are deployed on Vercel, and future iterations will integrate Stripe for secure payments.</p>
-									
-								<!-- <p>Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.</p>
-								<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat tempus.</p> -->
-								<br>
-								<a href="https://dorian2-frontend.vercel.app/">See frontend portal here.</a>
-								<br>
-								<a href="https://dorian2-admin.vercel.app/">See admin portal here.</a>
-								<br>
-								<a href="https://github.com/jaspreetl/dorian2">View this project on GitHub here!</a>
+                Beyond my academic and professional work, I'm an avid reader with wide-ranging intellectual interests. I also enjoy traveling and baking as creative outlets that balance my technical pursuits.              </p>
+            </div>
+              <div>
+                <img className="about-photo" src="images/Lal_Jaspreet_Headshot.jpg" alt="Jaspreet Lal headshot" />
+              </div>
+          </div>
+        </section>
 
-							</article>
-						<!-- About -->
-							<article id="about">
-								<h2 class="major">About</h2>
-								<H4>MEET JASPREET! </H4>
-								<h5>Student, Tech Enthusiast, and Aspiring Data Engineer</h5>
-								<div class="content">
-									<div class="inner">
-										<p>I am a graduate student in Cornell Tech's Class of 2026, pursuing a dual degree in Applied Information 
-											Science and Information Systems with a concentration in Urban Technology. With over eight years of 
-											experience in computer science and technology, I have developed strong expertise in Python, SQL, C++, 
-											Swift, React.js, and related tools. My background in software engineering and data engineering has 
-											equipped me to solve complex problems and build innovative, technology-driven solutions.<br /> 
-											<br />
-											In addition, I bring four years of part-time experience in education, where I taught subjects 
-											ranging from introductory coding with Scratch to guiding high school students through the 
-											college application process. This experience has strengthened my ability to communicate complex 
-											concepts clearly and mentor learners of all levels. <br />
-											<br />
-											Outside of my academic and professional pursuits, I am an avid reader with a curiosity that 
-											spans many disciplines. I also enjoy traveling and baking as creative outlets. <br />
-											<br />
-											Thank you for taking the time to learn more about me. I am always open to new 
-											opportunities and collaborations. Feel free to reach out to me via the <a href="#contact">Contact</a> 
-											page or on <a href="https://www.linkedin.com/in/jaspreet-lal-232a171b2/">LinkedIn</a>. 
-										</p>
-										<hr>
-										<H4>Unmentioned Skills: </H4>
-										<ul>
-											<h5><li> Finding cute cafes in NYC: <u>Expert</u></li></h5>
-											<h5><li> Baking banana bread: <u>Intermediate</u></li></h5>
-											<h5><li> Forearm balance yoga pose: <u>Improving every day</u></li></h5>
-										</ul>
-								</div>
-							</div>
-								
-								<!-- <p>Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices. Aliquam libero et malesuada fames ac ante ipsum primis in faucibus. Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit amet.</p> -->
-							</article>
+        <section className="contact">
+          <h3 style={{ marginTop: 0 }}>Get in touch</h3>
+            <p>Thank you for taking the time to learn more about me. I am always open to new opportunities and collaborations. Feel free to reach out via <a href="https://www.linkedin.com/in/jaspreet-lal-232a171b2/" target="_blank" rel="noreferrer">LinkedIn</a>.</p>
+            <p>Phone: <a href="tel:+19293507094">(929) 350 - 7094</a></p>
+            <p>Email: <a href="mailto:jaspreetlal037@gmail.com">jaspreetlal037@gmail.com</a></p>
+        </section>
+      </main>
+    );
 
-						<!-- Contact -->
-						 <!-- modify this form HTML and place wherever you want your form -->
-						  <article id="contact">
-								<h2 class="major">Contact</h2>
-								<p>Feel free to reach out to me via email using the form below or connect with me on <a href="https://www.linkedin.com/in/jaspreet-lal-232a171b2/">LinkedIn</a>!</p>
-								<form
-								action="https://formspree.io/f/mvgbeyej"
-								method="POST"
-								>
-								<label>
-									Your email:
-									<input type="email" name="email">
-								</label>
-								<label>
-									Your message:
-									<textarea name="message"></textarea>
-								</label>
-								<!-- your other form fields go here -->
-								<button type="submit">Send</button>
-								</form>
-							</article>
-							
-					
-						<!-- Elements -->
-							<article id="elements">
-								<h2 class="major">Elements</h2>
+    const Footer = () => (
+      <footer>
+        © {new Date().getFullYear()} Jaspreet Lal · Built with care in NYC.
+      </footer>
+    );
 
-								<section>
-									<h3 class="major">Text</h3>
-									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-									<hr />
-									<h2>Heading Level 2</h2>
-									<h3>Heading Level 3</h3>
-									<h4>Heading Level 4</h4>
-									<h5>Heading Level 5</h5>
-									<h6>Heading Level 6</h6>
-									<hr />
-									<h4>Blockquote</h4>
-									<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-									<h4>Preformatted</h4>
-									<pre><code>i = 0;
+    const App = () => (
+      <>
+        <Hero />
+        <WorkSection />
+        <Footer />
+      </>
+    );
 
-while (!deck.isInOrder()) {
-    print 'Iteration ' + i;
-    deck.shuffle();
-    i++;
-}
-
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-								</section>
-
-								<section>
-									<h3 class="major">Lists</h3>
-
-									<h4>Unordered</h4>
-									<ul>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
-
-									<h4>Alternate</h4>
-									<ul class="alt">
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
-
-									<h4>Ordered</h4>
-									<ol>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis viverra.</li>
-										<li>Felis enim feugiat.</li>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis lorem.</li>
-										<li>Felis enim et feugiat.</li>
-									</ol>
-									<h4>Icons</h4>
-									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-									</ul>
-
-									<h4>Actions</h4>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-								</section>
-
-								<section>
-									<h3 class="major">Table</h3>
-									<h4>Default</h4>
-									<div class="table-wrapper">
-										<table>
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-
-									<h4>Alternate</h4>
-									<div class="table-wrapper">
-										<table class="alt">
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-								</section>
-
-								<section>
-									<h3 class="major">Buttons</h3>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Primary</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button">Default</a></li>
-										<li><a href="#" class="button small">Small</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-										<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-									</ul>
-									<ul class="actions">
-										<li><span class="button primary disabled">Disabled</span></li>
-										<li><span class="button disabled">Disabled</span></li>
-									</ul>
-								</section>
-
-								<section>
-									<h3 class="major">Form</h3>
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field half">
-												<label for="demo-name">Name</label>
-												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />
-											</div>
-											<div class="field half">
-												<label for="demo-email">Email</label>
-												<input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@untitled.tld" />
-											</div>
-											<div class="field">
-												<label for="demo-category">Category</label>
-												<select name="demo-category" id="demo-category">
-													<option value="">-</option>
-													<option value="1">Manufacturing</option>
-													<option value="1">Shipping</option>
-													<option value="1">Administration</option>
-													<option value="1">Human Resources</option>
-												</select>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-												<label for="demo-priority-low">Low</label>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-high" name="demo-priority">
-												<label for="demo-priority-high">High</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-copy" name="demo-copy">
-												<label for="demo-copy">Email me a copy</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-human" name="demo-human" checked>
-												<label for="demo-human">Not a robot</label>
-											</div>
-											<div class="field">
-												<label for="demo-message">Message</label>
-												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-											</div>
-										</div>
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" class="primary" /></li>
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-									</form>
-								</section>
-
-							</article>
-
-					</div>
-
-				<!-- Footer -->
-					<footer id="footer">
-						<a href="https://www.linkedin.com/in/jaspreet-lal-232a171b2/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a>
-						&nbsp; &nbsp; 
-						<a href="mailto:jaspreetlal037@gmail.com" class="icon brands fa-connectdevelop"><span class="label">Email</span></a>
-						<!-- <p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p> -->
-					</footer>
-
-			</div>
-
-		<!-- BG -->
-			<div id="bg"></div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+</body>
 </html>
+
