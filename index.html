@@ -82,11 +82,14 @@
       text-transform: uppercase;
     }
     .hero__subtitle {
-      font-size: clamp(1.05rem, 2.4vw, 1.35rem);
-      font-weight: 500;
+      font-size: clamp(1rem, 2.1vw, 1.2rem);
+      font-weight: 400;
       color: var(--text-sub);
       line-height: 1.6;
-      margin: 0 0 1.25rem;
+      margin: 0 0 1.1rem;
+      max-width: 440px;
+      display: block;
+      margin-left: auto;
     }
     .hero__cta {
       display: inline-flex;
@@ -101,6 +104,7 @@
       font-size: 0.95rem;
       letter-spacing: 0.02em;
       transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+      margin-top: 1.75rem;
     }
     .hero__cta svg {
       width: 18px;
@@ -115,7 +119,7 @@
     }
     .hero__cta:active { transform: translateY(0); }
     main {
-      padding: 6rem 4vw 0;
+      padding: 4rem 4vw 0;
       background: var(--sand);
       color: var(--ink);
     }
@@ -131,7 +135,7 @@
       letter-spacing: 0.15em;
       font-weight: 600;
       font-size: 0.75rem;
-      color: var(--terra);
+      color: #ba7b6e;
       text-align: center;
       margin-bottom: 1.25rem;
     }
@@ -344,12 +348,6 @@
         </video>
         <div className="hero__content">
           <h1 className="hero__title">Jaspreet<br />Lal</h1>
-          <p className="hero__subtitle">
-            Masters Candidate, Applied Information Science &amp; Systems at Cornell Tech
-          </p>
-          <p className="hero__subtitle">
-            Data Engineering Associate, Metropolitan Transit Authority (MTA)
-          </p>
           <a className="hero__cta" href="#work" onClick={(e) => smoothScroll(e, '#work')}>
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M12 4v16M6 14l6 6 6-6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
